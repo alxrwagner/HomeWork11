@@ -10,7 +10,7 @@ public abstract class Transport {
 
     public Transport(String brand, String model, String productionCountry, int productionYear, float maxSpeed, String color) {
         if (brand == null || brand.isBlank()){
-            this.brand = "default";
+            this.brand = "default ";
         }else {
             this.brand = brand;
         }

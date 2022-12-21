@@ -36,7 +36,7 @@ public final class Car extends Transport {
         }
 
         if(bodyType == null || bodyType.isBlank()){
-            this.bodyType = "default";
+            this.bodyType = "default ";
         }else {
             this.bodyType = bodyType;
         }

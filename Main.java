@@ -34,7 +34,7 @@ public class Main {
         System.out.println(bmw);
         System.out.println(kia);
         System.out.println(hyundai);
-
+        System.out.println();
         System.out.println(bmvBus);
         System.out.println(hyundaiBus);
         System.out.println(hyundaiBus2);

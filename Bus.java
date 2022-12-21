@@ -2,7 +2,6 @@ public final class Bus extends Transport{
 
     private final TypeOfBuss typeOfBuss;
 
-
     public Bus(String brand, String model, String productionCountry, int productionYear, float maxSpeed, String color, TypeOfBuss typeOfBuss) {
         super(brand, model, productionCountry, productionYear, maxSpeed, color);
 

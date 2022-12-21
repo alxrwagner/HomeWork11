@@ -1,7 +1,7 @@
 public enum TiresType {
     WINTER("Зимняя"), SUMMER("Летняя");
 
-    String type;
+    final String type;
 
     TiresType(String type) {
         this.type = type;
