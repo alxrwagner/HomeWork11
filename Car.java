@@ -1,28 +1,23 @@
 import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 
-public class Car {
+public final class Car extends Transport {
 
-    private final String brand;
-    private final String model;
-    private final String color;
-    private final String productionCountry;
     private final String bodyType;
-    private String transmission;
-
-    private final int productionYear;
     private final int seatsAmount;
     private final float engineVolume;
+    private String transmission;
     private Integer registrationNumber;
     private TiresType tiresType;
 
     private Insurance insurance;
 
-    public Car(String brand, String model, String color, String productionCountry,
-               int productionYear, float engineVolume, String transmission,
-               String bodyType, int seatsAmount, Integer registrationNumber, String tiresType) {
+    public Car(String brand, String model,  String productionCountry,
+               int productionYear, float maxSpeed, String color, float engineVolume, String transmission,
+               String bodyType, int seatsAmount, Integer registrationNumber, TiresType tiresType) {
+        super(brand, model, productionCountry, productionYear, maxSpeed, color);
 
-        if(tiresType == null || tiresType.isBlank() || !tiresType.equalsIgnoreCase(TiresType.WINTER.type)){
+        if(tiresType == null){
             this.tiresType = TiresType.SUMMER;
         }else{
             this.tiresType = TiresType.WINTER;
@@ -44,35 +39,6 @@ public class Car {
             this.bodyType = "default";
         }else {
             this.bodyType = bodyType;
-        }
-        if (brand == null || brand.isBlank()){
-            this.brand = "default";
-        }else {
-            this.brand = brand;
-        }
-
-        if (model == null || model.isBlank()){
-            this.model = "default";
-        }else {
-            this.model = model;
-        }
-
-        if (color == null || color.isBlank()){
-            this.color = "Белый";
-        }else {
-            this.color = color;
-        }
-
-        if (productionCountry == null || productionCountry.isBlank()){
-            this.productionCountry = "default";
-        }else {
-            this.productionCountry = productionCountry;
-        }
-
-        if (productionYear <= 0){
-            this.productionYear = 2000;
-        }else {
-            this.productionYear = productionYear;
         }
 
         if (engineVolume <= 0 ){
@@ -198,7 +164,8 @@ public class Car {
                 ", Коробка передач: " + transmission +
                 ", Тип резины: " + tiresType +
                 ", Тип кузова: " + bodyType +
-                ", " + getInsurance();
+                ", Максимальная скорость: " + maxSpeed +
+                ", " + insurance;
     }
 
     public void changeTires(int monthNumber){
